@@ -1,0 +1,6 @@
+$data = array( 'email' => 'sample@sample.com', 'first_name' => 'Lar', 'from' => 'sample@sample.comt', 'from_name' => 'Vel' );
+
+Mail::send( 'email.welcome', $data, function( $message ) use ($data)
+{
+    $message->to( $data['email'] )->from( $data['from'], $data['first_name'] )->subject( 'Welcome!' );
+});
